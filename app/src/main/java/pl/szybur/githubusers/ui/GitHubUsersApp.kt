@@ -19,7 +19,19 @@ fun GitHubUsersNavHost(
 ) {
     NavHost(navController = navController, startDestination = Screen.Home.route) {
         composable(route = Screen.Home.route) {
-            HomeScreen(onClick = { println("clicked $it") })
+            HomeScreen(onClick = {
+                navController.navigate(
+                    Screen.Details.createRoute(
+                        id = it.id
+                    )
+                )
+            })
+        }
+        composable(
+            route = Screen.Details.route,
+            arguments = Screen.Details.navArguments
+        ) {
+            DetailsScreen()
         }
     }
 }

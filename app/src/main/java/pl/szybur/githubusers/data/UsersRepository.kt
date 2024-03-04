@@ -84,4 +84,6 @@ class UsersRepository @Inject constructor() {
     )
 
     fun getUsers(): List<GitHubUser> = users.map { it.user }
+
+    fun getUser(id: Int): UserDetails = users.first { it.user.id == id }
 }

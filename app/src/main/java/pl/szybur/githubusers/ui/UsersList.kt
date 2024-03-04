@@ -18,7 +18,7 @@ fun UsersList(
 ) {
     LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
         items(items = users) { item ->
-            UserItem(user = item, modifier = modifier, onClick = {})
+            UserItem(user = item, modifier = modifier, onClick = { onClick(item) })
         }
     }
 }
