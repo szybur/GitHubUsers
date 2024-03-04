@@ -12,12 +12,18 @@ import pl.szybur.githubusers.data.GitHubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
-fun UserItem(user: GitHubUser, modifier: Modifier = Modifier) {
+fun UserItem(
+    user: GitHubUser,
+    onClick: (GitHubUser) -> Unit,
+    modifier: Modifier = Modifier) {
     Surface(
         color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
+        modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp),
+        onClick = { onClick(user) }
     ) {
-        Text(text = user.name)
+        Text(
+            text = user.name
+        )
     }
 }
 
@@ -25,6 +31,6 @@ fun UserItem(user: GitHubUser, modifier: Modifier = Modifier) {
 @Composable
 fun UserItemPreview() {
     GitHubUsersTheme {
-        UserItem(user = GitHubUser("Johny Mnemonic"))
+        UserItem(user = GitHubUser( name = "Johny Mnemonic"), onClick = {})
     }
 }

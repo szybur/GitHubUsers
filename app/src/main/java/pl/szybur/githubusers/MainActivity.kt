@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
+import pl.szybur.githubusers.ui.GitHubUsersApp
 import pl.szybur.githubusers.ui.UsersList
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 import pl.szybur.githubusers.viemodels.UsersViewModel
@@ -19,20 +20,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             GitHubUsersTheme {
-                HomeScreen()
+                GitHubUsersApp()
             }
         }
     }
 }
 
-@Composable
-fun HomeScreen(
-    modifier: Modifier = Modifier,
-    usersViewModel: UsersViewModel = viewModel()
-) {
-    Column {
-        Text(text = "Github users", modifier = modifier)
-        UsersList(users = usersViewModel.users, modifier = modifier)
-    }
-
-}

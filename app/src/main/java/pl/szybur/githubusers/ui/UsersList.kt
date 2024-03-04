@@ -11,10 +11,14 @@ import pl.szybur.githubusers.data.GitHubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
-fun UsersList(users: List<GitHubUser>, modifier: Modifier = Modifier) {
+fun UsersList(
+    users: List<GitHubUser>,
+    onClick: (GitHubUser) -> Unit,
+    modifier: Modifier = Modifier
+) {
     LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
         items(items = users) { item ->
-            UserItem(user = item, modifier = modifier)
+            UserItem(user = item, modifier = modifier, onClick = {})
         }
     }
 }
@@ -24,9 +28,10 @@ fun UsersList(users: List<GitHubUser>, modifier: Modifier = Modifier) {
 fun UsersListPreview() {
     GitHubUsersTheme {
         UsersList(users = listOf(
-            GitHubUser("Adam Słodowy"),
-            GitHubUser("Kapitan Żbik"),
-            GitHubUser("Smok Wawelski"),
-        ))
+            GitHubUser(name = "Adam Słodowy"),
+            GitHubUser(name = "Kapitan Żbik"),
+            GitHubUser(name = "Smok Wawelski"),
+        ),
+            onClick = {})
     }
 }

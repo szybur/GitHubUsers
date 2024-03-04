@@ -1,6 +1,7 @@
 package pl.szybur.githubusers.viemodels
 
 import androidx.compose.runtime.toMutableStateList
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import pl.szybur.githubusers.data.GitHubUser
