@@ -1,5 +1,7 @@
 package pl.szybur.githubusers.data.local
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import pl.szybur.githubusers.data.api.GithubUser
 import pl.szybur.githubusers.data.api.UserDetails
 import pl.szybur.githubusers.data.api.UsersRepository
@@ -85,7 +87,9 @@ class LocalRepository : UsersRepository {
         ),
     )
 
-    override fun getUsers(): List<GithubUser> = users.map { it.user }
+    override fun getUsers(): Flow<Result<List<GithubUser>>> =
+        flowOf(Result.success(users.map { it.user }))
+
 
     override fun getUser(login: String): UserDetails = users.first { it.user.login == login }
 }
