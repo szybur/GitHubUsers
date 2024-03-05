@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.szybur.githubusers.dataapi.GitHubUser
-import pl.szybur.githubusers.dataapi.UserDetails
+import pl.szybur.githubusers.data.api.GitHubUser
+import pl.szybur.githubusers.data.api.UserDetails
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
@@ -24,7 +24,7 @@ fun DetailsPanel(
     ) {
         Column {
             Text(
-                text = details.user.name,
+                text = details.user.login,
                 modifier = modifier.padding(4.dp)
             )
             Text(text = details.description)
@@ -38,8 +38,9 @@ fun DetailsPanel(
 fun DetailsPanelPreview() {
     GitHubUsersTheme {
         DetailsPanel(details = UserDetails(
-            user = GitHubUser(name = "Paul Atreides"),
+            user = GitHubUser(login = "Paul_Atreides"),
             description = "Lisan Al Gaib"
-        ))
+        )
+        )
     }
 }

@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.szybur.githubusers.dataapi.GitHubUser
+import pl.szybur.githubusers.data.api.GitHubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
@@ -28,9 +28,9 @@ fun UsersList(
 fun UsersListPreview() {
     GitHubUsersTheme {
         UsersList(users = listOf(
-            GitHubUser(name = "Adam Słodowy"),
-            GitHubUser(name = "Kapitan Żbik"),
-            GitHubUser(name = "Smok Wawelski"),
+            GitHubUser(login = "Adam_Słodowy"),
+            GitHubUser(login = "Kapitan_Żbik"),
+            GitHubUser(login = "Smok_Wawelski"),
         ),
             onClick = {})
     }

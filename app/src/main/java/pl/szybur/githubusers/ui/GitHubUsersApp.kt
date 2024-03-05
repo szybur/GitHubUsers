@@ -21,9 +21,7 @@ fun GitHubUsersNavHost(
         composable(route = Screen.Home.route) {
             HomeScreen(onClick = {
                 navController.navigate(
-                    Screen.Details.createRoute(
-                        id = it.id
-                    )
+                    Screen.Details.createRoute(it.login)
                 )
             })
         }

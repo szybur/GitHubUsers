@@ -3,8 +3,8 @@ package pl.szybur.githubusers.viemodels
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import pl.szybur.githubusers.dataapi.UserDetails
-import pl.szybur.githubusers.dataapi.UsersRepository
+import pl.szybur.githubusers.data.api.UserDetails
+import pl.szybur.githubusers.data.api.UsersRepository
 import javax.inject.Inject
 
 @HiltViewModel
@@ -13,9 +13,9 @@ class DetailsViewModel@Inject constructor(
     usersRepository: UsersRepository
 ): ViewModel() {
 
-    private val detailsId: Int  = (savedStateHandle.get<String>("id")!!).toInt()
+    private val login: String  = savedStateHandle.get<String>("login")!!
 
-    private val _details = usersRepository.getUser(detailsId)
+    private val _details = usersRepository.getUser(login)
     val details: UserDetails
         get() = _details
 }

@@ -11,11 +11,11 @@ sealed class Screen(
     data object Home : Screen("home")
 
     data object Details : Screen(
-        route = "details/{id}",
-        navArguments = listOf(navArgument("id") {
+        route = "details/{login}",
+        navArguments = listOf(navArgument("login") {
             type = NavType.StringType
         })
     ) {
-        fun createRoute(id: Int) = "details/${id}"
+        fun createRoute(login: String) = "details/${login}"
     }
 }

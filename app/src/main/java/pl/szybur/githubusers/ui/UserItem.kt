@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.szybur.githubusers.dataapi.GitHubUser
+import pl.szybur.githubusers.data.api.GitHubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
@@ -22,7 +22,7 @@ fun UserItem(
         onClick = { onClick(user) }
     ) {
         Text(
-            text = user.name
+            text = user.login
         )
     }
 }
@@ -31,6 +31,6 @@ fun UserItem(
 @Composable
 fun UserItemPreview() {
     GitHubUsersTheme {
-        UserItem(user = GitHubUser( name = "Johny Mnemonic"), onClick = {})
+        UserItem(user = GitHubUser(login = "Johny_Mnemonic"), onClick = {})
     }
 }
