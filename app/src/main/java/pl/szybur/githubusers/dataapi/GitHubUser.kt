@@ -1,4 +1,4 @@
-package pl.szybur.githubusers.data
+package pl.szybur.githubusers.dataapi
 
 data class GitHubUser (val id: Int = -1, val name: String)
 

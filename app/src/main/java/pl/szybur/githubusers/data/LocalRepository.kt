@@ -1,8 +1,10 @@
 package pl.szybur.githubusers.data
 
-import javax.inject.Inject
+import pl.szybur.githubusers.dataapi.GitHubUser
+import pl.szybur.githubusers.dataapi.UserDetails
+import pl.szybur.githubusers.dataapi.UsersRepository
 
-class UsersRepository @Inject constructor() {
+class LocalRepository : UsersRepository {
 
     private val users = listOf(
         UserDetails(
@@ -83,7 +85,7 @@ class UsersRepository @Inject constructor() {
         ),
     )
 
-    fun getUsers(): List<GitHubUser> = users.map { it.user }
+    override fun getUsers(): List<GitHubUser> = users.map { it.user }
 
-    fun getUser(id: Int): UserDetails = users.first { it.user.id == id }
+    override fun getUser(id: Int): UserDetails = users.first { it.user.id == id }
 }

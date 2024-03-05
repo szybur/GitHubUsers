@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.szybur.githubusers.data.GitHubUser
+import pl.szybur.githubusers.dataapi.GitHubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable

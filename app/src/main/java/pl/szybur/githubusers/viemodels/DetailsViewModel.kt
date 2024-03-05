@@ -3,8 +3,8 @@ package pl.szybur.githubusers.viemodels
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import pl.szybur.githubusers.data.UserDetails
-import pl.szybur.githubusers.data.UsersRepository
+import pl.szybur.githubusers.dataapi.UserDetails
+import pl.szybur.githubusers.dataapi.UsersRepository
 import javax.inject.Inject
 
 @HiltViewModel
