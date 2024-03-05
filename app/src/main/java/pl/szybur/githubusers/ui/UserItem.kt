@@ -8,13 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.szybur.githubusers.data.api.GitHubUser
+import pl.szybur.githubusers.data.api.GithubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
 fun UserItem(
-    user: GitHubUser,
-    onClick: (GitHubUser) -> Unit,
+    user: GithubUser,
+    onClick: (GithubUser) -> Unit,
     modifier: Modifier = Modifier) {
     Surface(
         color = MaterialTheme.colorScheme.primary,
@@ -31,6 +31,6 @@ fun UserItem(
 @Composable
 fun UserItemPreview() {
     GitHubUsersTheme {
-        UserItem(user = GitHubUser(login = "Johny_Mnemonic"), onClick = {})
+        UserItem(user = GithubUser(login = "Johny_Mnemonic"), onClick = {})
     }
 }

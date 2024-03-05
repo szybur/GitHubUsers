@@ -5,13 +5,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import pl.szybur.githubusers.data.api.GitHubUser
+import pl.szybur.githubusers.data.api.GithubUser
 import pl.szybur.githubusers.viemodels.UsersViewModel
 
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    onClick: (GitHubUser) -> Unit,
+    onClick: (GithubUser) -> Unit,
 ) {
     val usersViewModel: UsersViewModel = hiltViewModel()
     Column {

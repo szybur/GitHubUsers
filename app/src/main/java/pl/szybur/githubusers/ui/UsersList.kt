@@ -7,13 +7,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.szybur.githubusers.data.api.GitHubUser
+import pl.szybur.githubusers.data.api.GithubUser
 import pl.szybur.githubusers.ui.theme.GitHubUsersTheme
 
 @Composable
 fun UsersList(
-    users: List<GitHubUser>,
-    onClick: (GitHubUser) -> Unit,
+    users: List<GithubUser>,
+    onClick: (GithubUser) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
@@ -28,9 +28,9 @@ fun UsersList(
 fun UsersListPreview() {
     GitHubUsersTheme {
         UsersList(users = listOf(
-            GitHubUser(login = "Adam_Słodowy"),
-            GitHubUser(login = "Kapitan_Żbik"),
-            GitHubUser(login = "Smok_Wawelski"),
+            GithubUser(login = "Adam_Słodowy"),
+            GithubUser(login = "Kapitan_Żbik"),
+            GithubUser(login = "Smok_Wawelski"),
         ),
             onClick = {})
     }
